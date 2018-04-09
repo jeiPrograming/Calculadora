@@ -3,9 +3,10 @@ package calculadoraEstandar;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.text.DecimalFormat;
 
 public class Calculadoraestandar extends JFrame implements ActionListener{
-	
+
 	// CREANDO EL FORMULARIO
 	JPanel base = (JPanel) this.getContentPane();
 	
@@ -27,14 +28,13 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 	JButton btnless = new JButton("-");
 	JButton btnmultiplication = new JButton("*");
 	JButton btn0 = new JButton("0");
-	JButton btnresta = new JButton("/");
+	JButton btndividir = new JButton("/");
 	JButton btnpunto = new JButton(".");
 	JButton btnigual = new JButton("=");
 	
-	
-	
+
 	// CREANDO LA CAJA DEL FORMULARIO
-	public Calculadoraestandar() {
+	public Calculadoraestandar() {	
 	
 		// PROPIEDADES DEL FORMULARIO
 		base.setLayout(null); //Acomodar manualmente los elementos
@@ -136,10 +136,10 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 		btn0.addActionListener(this); // Espera a que el boton haga un evento y lo captura
 										
 		// BOTON Resta 
-		btnresta.setBounds(152,278,60,60);
-		btnresta.setFont(new Font("tahoma",Font.BOLD,20)); // Tipo de fuente / estilo de fuente / tamaño de fuente
-		add(btnresta); // Agrega el boton al formulario 
-		btnresta.addActionListener(this); // Espera a que el boton haga un evento y lo captura
+		btndividir.setBounds(152,278,60,60);
+		btndividir.setFont(new Font("tahoma",Font.BOLD,20)); // Tipo de fuente / estilo de fuente / tamaño de fuente
+		add(btndividir); // Agrega el boton al formulario 
+		btndividir.addActionListener(this); // Espera a que el boton haga un evento y lo captura
 										
 		// BOTON Punto
 		btnpunto.setBounds(217,278,93,60);
@@ -152,11 +152,12 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 		btnigual.setFont(new Font("tahoma",Font.BOLD,18)); // Tipo de fuente / estilo de fuente / tamaño de fuente
 		add(btnigual); // Agrega el boton al formulario 
 		btnigual.addActionListener(this); // Espera a que el boton haga un evento y lo captura
-				
+	
 		
 	}
 
 	public static void main(String[] args) {
+	
 		
 		new Calculadoraestandar(); // Correr el programa de la clase Calculadoraestandar
 			
@@ -167,6 +168,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 		
 		// ACCION EN LOS BOTONES
 		
+		// UNO (1)
 		if(e.getSource() == btn1) { // Verifica si preciones el boton 1
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("1"); // Agregale el 1
@@ -175,6 +177,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// DOS (2)
 		if(e.getSource() == btn2) { // Verifica si preciones el boton 2
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("2"); // Agregale el 2
@@ -183,6 +186,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// TRES (3)
 		if(e.getSource() == btn3) { // Verifica si preciones el boton 3
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("3"); // Agregale el 3
@@ -191,6 +195,8 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		
+		// CUATRO (4)
 		if(e.getSource() == btn4) { // Verifica si preciones el boton 4
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("4"); // Agregale el 4
@@ -199,6 +205,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// CINCO (5)
 		if(e.getSource() == btn5) { // Verifica si preciones el boton 5
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("5"); // Agregale el 5
@@ -207,6 +214,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// SEIS
 		if(e.getSource() == btn6) { // Verifica si preciones el boton 6
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("6"); // Agregale el 6
@@ -215,6 +223,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// SIETE (7)
 		if(e.getSource() == btn7) { // Verifica si preciones el boton 7
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("7"); // Agregale el 7
@@ -223,6 +232,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// OCHO (8)
 		if(e.getSource() == btn8) { // Verifica si preciones el boton 8
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("8"); // Agregale el 8
@@ -231,6 +241,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// NUEVE (9)
 		if(e.getSource() == btn9) { // Verifica si preciones el boton 9
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("9"); // Agregale el 9
@@ -239,6 +250,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
+		// CERO
 		if(e.getSource() == btn0) { // Verifica si preciones el boton 0
 			if(pantalla.getText() == "") { // Si la pantalla esta vacia agregale lo siguiente
 				pantalla.setText("0"); // Agregale el 0
@@ -247,16 +259,242 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 			}	
 		}
 		
-		if(e.getSource() == btnpunto) { // Verifica si preciones el boton ,
+		// PUNTO
+		byte valor_caracter = 0; // Almacena en la variable valor_caracter el valor 0 
+		byte valor_caracter2 = 0; // De seguro se borre
+		byte add_coma = 0; // Almacena en la variable add_coma el valor 0
+		if(e.getSource() == btnpunto) { // Verifica si precione el boton ,
+			
+			for (int a = 0; a < pantalla.getText().length(); a++) { // Entra a un bucle para buscar si existe algun sigo como (+,-,*,/)
+				char dividir_string = pantalla.getText().charAt(a); // Separame los caracteres en un array y almacenalo en la variable dividir_string
+				
+				
+				if(dividir_string == '+' || dividir_string == '-' || dividir_string == '*' || dividir_string == '/') { // Mira a ver si existe algunos de estos caracteres si existe entra a la siguiente condicion
+					
+					// Cuando entre a esta condicion a+1 va a tener un valor almacenado
+					String segunda_parte = pantalla.getText().substring(a+1, pantalla.getText().length()); // Almacename en la variable segunda_parte la parte desde la cadena a+1 hasta la ultima cadena 
+
+					//eC Significa encontrarCadena
+					for (int eC = 0; eC < segunda_parte.length(); eC++) { // Entra en un bucle para buscar si la segunda parte de la cadena contiene una coma
+						
+						char buscar_caracter = segunda_parte.charAt(eC); // Almacena en la variable buscar_caracter un array de la variable segunda_parte
+						
+						if(buscar_caracter == ',') { // Si bucar_caracter es igual a coma entra en la condicion
+							add_coma = 1; // Agrega en la variable add_coma el valor de 1
+							break; // Termina la condicion
+						}					
+						valor_caracter++; // Mientras el bucle se va repitiendo ve sumandole un 1 a la variable valor_caracter
+	
+					}
+					
+					if(valor_caracter == segunda_parte.length()) { // Si valor_caracer es igual a el ultimo valor de la segunda parte entra a la condicion
+						
+						if(add_coma == 0) {
+							char caracter_punto = pantalla.getText().charAt(pantalla.getText().length()-1); // Busca el ultimo valor que tenga la cadena string 
+							
+							if(caracter_punto != '+' && caracter_punto != '-' && caracter_punto != '/' && caracter_punto != '*' && caracter_punto != ',') { // Mira que el ultimo valor no sea ninguno de estos caracteres (+ • - • / • * • ,)
+		
+								pantalla.setText(pantalla.getText() +","); // Toma el valor que tenga la pantalla y concatenalo con el valor ,
+								
+							}
+						}
+						
+					}
+	
+				}else{
+	
+					
+					
+					if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
+					int encontrarCadena = pantalla.getText().indexOf(",");//Buscar si existe una , en la pantalla
+					if(!(encontrarCadena != -1)) { // Si el resultado no es distion de -1 la cadena no existe y ejecuta el siguiente codigo
+				
+							
+							char caracter_punto = pantalla.getText().charAt(pantalla.getText().length()-1); // Busca el ultimo valor que tenga la cadena string 
+							
+							if(caracter_punto != '+' && caracter_punto != '-' && caracter_punto != '/' && caracter_punto != '*' && caracter_punto != ',') { // Mira que el ultimo valor no sea ninguno de estos caracteres (+ • - • / • * • ,)
+								pantalla.setText(pantalla.getText() +","); // Toma el valor que tenga la pantalla y concatenalo con el valor ,
+								int encontrarCadena2 = pantalla.getText().indexOf(",");//Buscar si existe una , en la pantalla
+								
+								//eC Significa encontrarCadena
+								for (int eC = 0; eC < pantalla.getText().length(); eC++) {
+									char buscarCaracter = pantalla.getText().charAt(eC);
+									if(buscarCaracter == ',') {
+										valor_caracter2++;
+										if(valor_caracter2 == 2) {
+											
+											break;
+										}
+									}
+								}
+													
+								/*System.out.println("hay "+valorCaracter+" puntos");*/
+							}
+							
+						
+						
+					}
+				}
+	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				}
+			}	
+			
+			
+		}
+		
+		// SUMA
+		if(e.getSource() == btnplus) { // Verifica si preciones el boton +
 			if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
-				int encontarCadena = pantalla.getText().indexOf(",");//Buscar si existe una , en la pantalla
-				if(!(encontarCadena != -1)) { // Si el resultado no es distion de -1 la cadena no existe y ejecuta el siguiente codigo
-					pantalla.setText(pantalla.getText() +","); // Toma el valor que tenga la pantalla y concatenalo con el valor ,
+				int encontrarCadena = pantalla.getText().indexOf("+");//Buscar si existe una , en la pantalla
+				if(!(encontrarCadena != -1)) { // Si el resultado no es distion de -1 la cadena no existe y ejecuta el siguiente codigo
+					char caracter_punto = pantalla.getText().charAt(pantalla.getText().length()-1); // Busca el ultimo valor que tenga la cadena string 
+					if(caracter_punto != '+' && caracter_punto != '-' && caracter_punto != '/' && caracter_punto != '*' && caracter_punto != ',') { // Mira que el ultimo valor no sea ninguno de estos caracteres (+ • - • / • * • ,)
+						pantalla.setText(pantalla.getText() +"+"); // Toma el valor que tenga la pantalla y concatenalo con el valor +
+					}
 				}
 			}
 		}
 		
-		//// ACCION DE LOS BOTONES DE SUMA / RESTA / MUTIPLICACION Y DIVICION
+		
+		// RESTA
+		if(e.getSource() == btnless) { // Verifica si preciones el boton -
+			if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
+				int encontrarCadena = pantalla.getText().indexOf("-");//Buscar si existe una , en la pantalla
+				if(!(encontrarCadena != -1)) { // Si el resultado no es distion de -1 la cadena no existe y ejecuta el siguiente codigo
+					char caracter_punto = pantalla.getText().charAt(pantalla.getText().length()-1); // Busca el ultimo valor que tenga la cadena string 
+					if(caracter_punto != '+' && caracter_punto != '-' && caracter_punto != '/' && caracter_punto != '*' && caracter_punto != ',') { // Mira que el ultimo valor no sea ninguno de estos caracteres (+ • - • / • * • ,)
+						pantalla.setText(pantalla.getText() +"-"); // Toma el valor que tenga la pantalla y concatenalo con el valor -
+					}
+				}
+			}
+		}
+		
+		// MULTIPLICACION
+		if(e.getSource() == btnmultiplication) { // Verifica si preciones el boton *
+			if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
+				int encontrarCadena = pantalla.getText().indexOf("*");//Buscar si existe una , en la pantalla
+				if(!(encontrarCadena != -1)) { // Si el resultado no es distion de -1 la cadena no existe y ejecuta el siguiente codigo
+					char caracter_punto = pantalla.getText().charAt(pantalla.getText().length()-1); // Busca el ultimo valor que tenga la cadena string 
+					if(caracter_punto != '+' && caracter_punto != '-' && caracter_punto != '/' && caracter_punto != '*' && caracter_punto != ',') { // Mira que el ultimo valor no sea ninguno de estos caracteres (+ • - • / • * • ,)
+						pantalla.setText(pantalla.getText() +"*"); // Toma el valor que tenga la pantalla y concatenalo con el valor *
+					}
+				}
+			}
+		}
+		
+		// DIVICION
+		if(e.getSource() == btndividir) { // Verifica si preciones el boton /
+			if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
+				int encontrarCadena = pantalla.getText().indexOf("/");//Buscar si existe una , en la pantalla
+				if(!(encontrarCadena != -1)) { // Si el resultado no es distion de -1 la cadena no existe y ejecuta el siguiente codigo
+					char caracter_punto = pantalla.getText().charAt(pantalla.getText().length()-1); // Busca el ultimo valor que tenga la cadena string 
+					if(caracter_punto != '+' && caracter_punto != '-' && caracter_punto != '/' && caracter_punto != '*' && caracter_punto != ',') { // Mira que el ultimo valor no sea ninguno de estos caracteres (+ • - • / • * • ,)
+						pantalla.setText(pantalla.getText() +"/"); // Toma el valor que tenga la pantalla y concatenalo con el valor /
+					}
+				}
+			}
+		}
+		
+		
+		// BORRAR 		
+		if(e.getSource() == btnclear) { // Verifica si preciones el boton borrar
+			if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
+				
+				pantalla.setText(""); // Borra lo que tenga la pantalla
+				
+			}
+		}
+
+		if(e.getSource() == btnigual) { // Verifica si preciones el boton ,
+			
+			if(pantalla.getText().length() != 0) { // Si la pantalla no esta vacia agregale lo siguiente
+				
+				String cadena = pantalla.getText(); // Guarda en la variable cadena los datos tomados de la pantalla 
+				for(int i=0; i < pantalla.getText().length(); i++) { // Crea con la cantidad de valor de tenga la cadena 
+					
+					char caracter = cadena.charAt(i); // Ve almacenando en la variable caracter los caracteres de la cadena
+					if(caracter == '+') { // Si en un momento la variable caracte lleva a ser igual a + ejecuta el siguiente codigo
+				
+						String primera_parte = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del +
+						String segunda_parte = cadena.substring(i+1,cadena.length()); // Tomame los numeros despues del 0 hasta el final
+						
+						int encontrarCadenaPunto = primera_parte.indexOf(","); // Guarda en la variable encontrarCadenaPunto -1 si no existe la coma en la cadena y diferente a -1 si existe
+						
+						
+						if(encontrarCadenaPunto == -1) { // Si encontrarCadenaPunto es igual a -1 la variable primera_parte no contiene punto y la segunda si
+							
+							encontrarCadenaPunto = segunda_parte.indexOf(","); //Guarda en la variable encontrarCadena -1 i				
+							
+							if(encontrarCadenaPunto == -1) {
+								encontrarCadenaPunto = -1;
+								System.out.println("Ninguno contienen punto");								
+							}else {
+								System.out.println("Ahora encontrar cadena puneto es la segunda parte "+encontrarCadenaPunto);
+								segunda_parte = segunda_parte.replace(',','.');
+							}
+							
+						}else{
+							encontrarCadenaPunto = segunda_parte.indexOf(",");
+							if(encontrarCadenaPunto != -1) {
+								System.out.println("las dos cadenas tienen punto "+encontrarCadenaPunto);
+							}
+							primera_parte = primera_parte.replace(',','.');
+							System.out.println("cadena puneto es la primera parte "+encontrarCadenaPunto);
+						}
+						
+					/*	double sumar1 = Double.parseDouble(primera_parte);
+						double sumar2 = Double.parseDouble(segunda_parte);
+						double  resultado = sumar1 + sumar2;*/
+						
+						System.out.println(encontrarCadenaPunto);
+						
+					/*	String convertir_resultado = String.valueOf(resultado);*/
+
+						/*if(encontrarCadenaPunto != -1 ) {// Si el resultado  es distinto de -1 la cadena existe y ejecuta el siguiente codigo
+							pantalla.setText("Si hay punto");
+							primera_parte = primera_parte.replace(',','.');
+							segunda_parte = segunda_parte.replace(',','.');
+							
+							for(int a=0; a < convertir_resultado.length(); a++) { 
+								char caracter_a = convertir_resultado.charAt(a);
+								System.out.println(caracter_a);
+								if(caracter_a == '.'){
+									String quit_decimales = convertir_resultado.substring(a+1,convertir_resultado.length());
+									double quit_decimar_double = Double.parseDouble(quit_decimales);
+									if(quit_decimar_double < 0.01) {
+										pantalla.setText(convertir_resultado.substring(0,a));
+									}else {
+										pantalla.setText(convertir_resultado);
+									}
+								}
+								
+							
+							}
+							
+						}else {
+							pantalla.setText("No hay punto");
+						}*/
+							
+						
+					}	
+				
+						
+			}
+					
+			}
+		}
+		
+		
 		
 		
 		
