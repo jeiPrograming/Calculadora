@@ -127,7 +127,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 		btnmultiplication.setBounds(22,278,60,60);
 		btnmultiplication.setFont(new Font("tahoma",Font.BOLD,20)); // Tipo de fuente / estilo de fuente / tamaño de fuente
 		add(btnmultiplication); // Agrega el boton al formulario 
-		btnigual.addActionListener(this); // Espera a que el boton haga un evento y lo captura
+		btnmultiplication.addActionListener(this); // Espera a que el boton haga un evento y lo captura
 								
 		// BOTON 0
 		btn0.setBounds(87,278,60,60);
@@ -543,7 +543,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					
 ////////////////////////////////////////////////////////////////////////////////RESTA/////////////////////////////////////////////////////////////////////////////////////////////////////
-					if(caracter == '-') { // Si en un momento la variable caracte lleva a ser igual a - ejecuta el siguiente codigo
+					else if(caracter == '-') { // Si en un momento la variable caracte lleva a ser igual a - ejecuta el siguiente codigo
 						
 						String primera_parte_string = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del -
 						String segunda_parte_string = cadena.substring(i+1,pantalla.getText().length()); // Tomame los numeros despues del - hasta lo ultimo
@@ -674,7 +674,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////DIVICION///////////////////////////////////////////////////////////////////////////////////////////////////
-					if(caracter == '/') { // Si en un momento la variable caracte lleva a ser igual a / ejecuta el siguiente codigo
+					else if(caracter == '/') { // Si en un momento la variable caracte lleva a ser igual a / ejecuta el siguiente codigo
 						
 						String primera_parte_string = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del /
 						String segunda_parte_string = cadena.substring(i+1,pantalla.getText().length()); // Tomame los numeros despues del / hasta lo ultimo
@@ -682,7 +682,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						int encontrar_cadena_punto = pantalla.getText().indexOf(","); // Guarda en la variable encontrar_cadena_punto -1 si no existe la coma en la cadena y diferente a -1 si existe
 						
 						
-						if(encontrar_cadena_punto != -1) { // Si encontrar_cadenaPunto es igual a -1 contiene una coma
+						if(encontrar_cadena_punto != -1) { // Si encontrar_cadena_punto es igual a -1 contiene una coma
 
 						    if (isNumeric(primera_parte_string) != true && isNumeric(segunda_parte_string) != true) { // Si las dos cadenas contienen un double
 						    	
@@ -690,7 +690,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						    	segunda_parte_string = segunda_parte_string.replace(',','.'); // Convierte la coma de la segunda parte en punto
 						    	double parte_1 = Double.parseDouble(primera_parte_string); // Almacena en la variable parte_1 el valor convertido de la cadena string primera parte
 						    	double parte_2 = Double.parseDouble(segunda_parte_string);	// Almacena en la variable parte_2 el valor convertido de la cadena string segunda parte
-						    	double resultado = parte_1 / parte_2; // Almacena en la variable resultado de tipo double la divicion de parte_1 y parte_2
+						    	double resultado = parte_1 / parte_2; // Almacena en la variable resultado de tipo double la  divicion de parte_1 y parte_2
 						    	String resultado_string = String.valueOf(resultado); // Convierteme el resultado a una cadena string
 						    	resultado_string = resultado_string.replace('.',','); // Convierte el punto de el resultado a coma
 
@@ -698,7 +698,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						    		
 									char buscar_caracter_div = resultado_string.charAt(div); // Almacena en la variable buscar_caracter_div un array de la variable resultado_string
 									
-									if(buscar_caracter_div == ',') { // Si buscar_caracter_div llega a hacer una coma entra a la condicion
+									if(buscar_caracter_div == ',') { // Si buscar_caracter_mul llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(div+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
 										int resultado_div = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_div en valor convertido en un entero de la cadena valor_recortado
@@ -765,12 +765,12 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
     	
 						    	for (int div = 0; div < resultado_string.length(); div++) { // Entra al bucle para buscar el punto del resultado
 						    		
-									char buscar_caracter_div = resultado_string.charAt(div); // Almacena en la variable buscar_caracter_plus un array de la variable resultado_string
+									char buscar_caracter_div = resultado_string.charAt(div); // Almacena en la variable buscar_caracter_div un array de la variable resultado_string
 									
 									if(buscar_caracter_div == ',') { // Si buscar_caracter_div llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(div+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
-										int resultado_div = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_plus en valor convertido en un entero de la cadena valor_recortado
+										int resultado_div = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_div en valor convertido en un entero de la cadena valor_recortado
 										
 										if(resultado_div < 0.1) { // Si resultado_div es menos que 0.1 entra a la condicion
 
@@ -818,6 +818,138 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 					}	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////MULTIPLICACION//////////////////////////////////////////////////////////////////////////////////////////
+					else if(caracter == '*') { // Si en un momento la variable caracte lleva a ser igual a * ejecuta el siguiente codigo
+						
+						String primera_parte_string = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del *
+						String segunda_parte_string = cadena.substring(i+1,pantalla.getText().length()); // Tomame los numeros despues del * hasta lo ultimo
+						
+						int encontrar_cadena_punto = pantalla.getText().indexOf(","); // Guarda en la variable encontrar_cadena_punto -1 si no existe la coma en la cadena y diferente a -1 si existe
+						
+						
+						if(encontrar_cadena_punto != -1) { // Si encontrar_cadena_punto es igual a -1 contiene una coma
+
+						    if (isNumeric(primera_parte_string) != true && isNumeric(segunda_parte_string) != true) { // Si las dos cadenas contienen un double
+						    	
+						    	primera_parte_string = primera_parte_string.replace(',','.'); // Convierte la coma de la primera parte en punto
+						    	segunda_parte_string = segunda_parte_string.replace(',','.'); // Convierte la coma de la segunda parte en punto
+						    	double parte_1 = Double.parseDouble(primera_parte_string); // Almacena en la variable parte_1 el valor convertido de la cadena string primera parte
+						    	double parte_2 = Double.parseDouble(segunda_parte_string);	// Almacena en la variable parte_2 el valor convertido de la cadena string segunda parte
+						    	double resultado = parte_1 * parte_2; // Almacena en la variable resultado de tipo double la multiplicacion de parte_1 y parte_2
+						    	String resultado_string = String.valueOf(resultado); // Convierteme el resultado a una cadena string
+						    	resultado_string = resultado_string.replace('.',','); // Convierte el punto de el resultado a coma
+
+						    	for (int mul = 0; mul < resultado_string.length(); mul++) { // Entra al bucle para buscar el punto del resultado
+						    		
+									char buscar_caracter_mul = resultado_string.charAt(mul); // Almacena en la variable buscar_caracter_mul un array de la variable resultado_string
+									
+									if(buscar_caracter_mul == ',') { // Si buscar_caracter_mul llega a hacer una coma entra a la condicion
+										
+										String valor_recortado = resultado_string.substring(mul+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
+										int resultado_mul = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_mul en valor convertido en un entero de la cadena valor_recortado
+										
+										if(resultado_mul < 0.1) { // Si resultado_mul es menos que 0.1 entra a la condicion
+
+											// Al el resultado ser 0 el valor se redondea y se le quita el estado de double
+											String valor_recortado_2 = resultado_string.substring(0, mul); // Almacena en la variable valor_recortado_2 el valor desde el principio hasta antes de la coma
+											pantalla.setText(valor_recortado_2); // Imprime por pantalla el valor
+											
+										}else { // Sino es asi entra en esta condicion
+											
+											// Al resultado ser mayor que cero se imprimira igual como esta
+											pantalla.setText(resultado_string); // Imprime por pantalla el valor 
+										}
+												
+									}
+												
+				
+								}
+						    	
+						    }else if(isNumeric(primera_parte_string) != true){ // Si la primera parte es la unica que contiene double entra a la condicion
+						    	
+						    	primera_parte_string = primera_parte_string.replace(',','.'); // Convierteme de coma a punto
+						    	double parte_1 = Double.parseDouble(primera_parte_string); // Almacename en la variable parte_1 el valor convertido a double de la primera parte
+						    	int parte_2 = Integer.parseInt(segunda_parte_string); // Almacename en la variable parte_2 el valor convertido a entero de la segunda parte
+						    	double resultado = parte_1 * parte_2; // multiplica los dos numero y almacenalo en la variable resultado de tipo double
+						    	String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado y conviertelo en string
+						    	resultado_string = resultado_string.replace('.',','); // Convierte el punto de el resultado a coma
+
+						    	for (int mul = 0; mul < resultado_string.length(); mul++) { // Entra al bucle para buscar el punto del resultado
+						    		
+									char buscar_caracter_mul = resultado_string.charAt(mul); // Almacena en la variable buscar_caracter_mul un array de la variable resultado_string
+									
+									if(buscar_caracter_mul == ',') { // Si buscar_caracter_mul llega a hacer una coma entra a la condicion
+										
+										String valor_recortado = resultado_string.substring(mul+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
+										int resultado_mul = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_mul en valor convertido en un entero de la cadena valor_recortado
+										
+										if(resultado_mul < 0.1) { // Si resultado_mul es menos que 0.1 entra a la condicion
+
+											// Al el resultado ser 0 el valor se redondea y se le quita el estado de double
+											String valor_recortado_2 = resultado_string.substring(0, mul); // Almacena en la variable valor_recortado_2 el valor desde el principio hasta antes de la coma
+											pantalla.setText(valor_recortado_2); // Imprime por pantalla el valor
+											
+										}else { // Sino es asi entra en esta condicion
+											
+											// Al resultado ser mayor que cero se imprimira igual como esta
+											pantalla.setText(resultado_string); // Imprime por pantalla el valor 
+										}
+												
+									}			
+				
+								}
+						    	
+						    }else if(isNumeric(segunda_parte_string) != true) { // Si la segunda parte es la unica que contiene double entra a la condicion
+						    	
+						    	segunda_parte_string = segunda_parte_string.replace(',','.'); // Convierteme de coma a punto
+						    	int parte_1 = Integer.parseInt(primera_parte_string); // Almacename en la variable parte_1 el valor convertido a entedo de la primera parte
+						    	double parte_2 = Double.parseDouble(segunda_parte_string); // Almacename en la variable parte_2 el valor convertido a double de la segunda parte
+						    	double resultado = parte_1 * parte_2; // multiplica los dos numero y almacenalo en la variable resultado de tipo double
+						    	String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado y conviertelo en string
+						    	resultado_string = resultado_string.replace('.',','); // Convierte el punto de el resultado a coma
+    	
+						    	for (int mul = 0; mul < resultado_string.length(); mul++) { // Entra al bucle para buscar el punto del resultado
+						    		
+									char buscar_caracter_mul = resultado_string.charAt(mul); // Almacena en la variable buscar_caracter_mul un array de la variable resultado_string
+									
+									if(buscar_caracter_mul == ',') { // Si buscar_caracter_mul llega a hacer una coma entra a la condicion
+										
+										String valor_recortado = resultado_string.substring(mul+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
+										int resultado_mul = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_mul en valor convertido en un entero de la cadena valor_recortado
+										
+										if(resultado_mul < 0.1) { // Si resultado_div es menos que 0.1 entra a la condicion
+
+											// Al el resultado ser 0 el valor se redondea y se le quita el estado de double
+											String valor_recortado_2 = resultado_string.substring(0, mul); // Almacena en la variable valor_recortado_2 el valor desde el principio hasta antes de la coma
+											pantalla.setText(valor_recortado_2); // Imprime por pantalla el valor
+											
+										}else { // Sino es asi entra en esta condicion
+											
+											// Al resultado ser mayor que cero se imprimira igual como esta
+											pantalla.setText(resultado_string); // Imprime por pantalla el valor 
+										}
+												
+									}
+												
+				
+								}
+						    	
+						    } 
+					
+						}else{ // De lo contrario no contiene coma
+						
+							//Esta condicion de cumplira cuando ninguno de los 2 contengan double
+							int parte_1 = Integer.parseInt(primera_parte_string); // Almacena en la variable parte_1 el valor convertido a entero de la variable primera_parte_string
+							int parte_2 = Integer.parseInt(segunda_parte_string); // Almacena en la variable parte_2 el valor convertido a entero de la variable segunda_parte_string
+							int resultado = parte_1 * parte_2; // Almacena en la variable resultado de tipo entera el valor multiplicado de parte_1 * parte_2
+					    	String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado convertido a una cadena
+					    	pantalla.setText(resultado_string); // Imprime por pantalla el resultado
+							
+						}
+					
+					}	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					
 				}
 					
 			}
