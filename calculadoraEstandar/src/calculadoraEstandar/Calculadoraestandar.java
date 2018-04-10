@@ -416,10 +416,10 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						String primera_parte_string = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del +
 						String segunda_parte_string = cadena.substring(i+1,pantalla.getText().length()); // Tomame los numeros despues del + hasta lo ultimo
 						
-						int encontrar_cadenaPunto = pantalla.getText().indexOf(","); // Guarda en la variable encontrarCadenaPunto -1 si no existe la coma en la cadena y diferente a -1 si existe
+						int encontrar_cadena_punto = pantalla.getText().indexOf(","); // Guarda en la variable encontrar_cadena_punto -1 si no existe la coma en la cadena y diferente a -1 si existe
 						
 						
-						if(encontrar_cadenaPunto != -1) { // Si encontrar_cadenaPunto es igual a -1 contiene una coma
+						if(encontrar_cadena_punto != -1) { // Si encontrar_cadena_punto es igual a -1 contiene una coma
 
 						    if (isNumeric(primera_parte_string) != true && isNumeric(segunda_parte_string) != true) { // Si las dos cadenas contienen un double
 						    	
@@ -548,10 +548,10 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						String primera_parte_string = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del -
 						String segunda_parte_string = cadena.substring(i+1,pantalla.getText().length()); // Tomame los numeros despues del - hasta lo ultimo
 						
-						int encontrar_cadenaPunto = pantalla.getText().indexOf(","); // Guarda en la variable encontrarCadenaPunto -1 si no existe la coma en la cadena y diferente a -1 si existe
+						int encontrar_cadena_punto = pantalla.getText().indexOf(","); // Guarda en la variable encontrar_cadena_punto -1 si no existe la coma en la cadena y diferente a -1 si existe
 						
 						
-						if(encontrar_cadenaPunto != -1) { // Si encontrar_cadenaPunto es igual a -1 contiene una coma
+						if(encontrar_cadena_punto != -1) { // Si encontrar_cadena_punto es igual a -1 contiene una coma
 
 						    if (isNumeric(primera_parte_string) != true && isNumeric(segunda_parte_string) != true) { // Si las dos cadenas contienen un double
 						    	
@@ -567,7 +567,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						    		
 									char buscar_caracter_res = resultado_string.charAt(res); // Almacena en la variable buscar_caracter_res un array de la variable resultado_string
 									
-									if(buscar_caracter_res == ',') { // Si buscar_caracter_plus llega a hacer una coma entra a la condicion
+									if(buscar_caracter_res == ',') { // Si buscar_caracter_res llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(res+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
 										int resultado_res = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_res en valor convertido en un entero de la cadena valor_recortado
@@ -600,14 +600,14 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 
 						    	for (int res = 0; res < resultado_string.length(); res++) { // Entra al bucle para buscar el punto del resultado
 						    		
-									char buscar_caracter_res = resultado_string.charAt(res); // Almacena en la variable buscar_caracter_plus un array de la variable resultado_string
+									char buscar_caracter_res = resultado_string.charAt(res); // Almacena en la variable buscar_caracter_res un array de la variable resultado_string
 									
-									if(buscar_caracter_res == ',') { // Si buscar_caracter_plus llega a hacer una coma entra a la condicion
+									if(buscar_caracter_res == ',') { // Si buscar_caracter_res llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(res+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
-										int resultado_res = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_plus en valor convertido en un entero de la cadena valor_recortado
+										int resultado_res = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_res en valor convertido en un entero de la cadena valor_recortado
 										
-										if(resultado_res < 0.1) { // Si resultado_plus es menos que 0.1 entra a la condicion
+										if(resultado_res < 0.1) { // Si resultado_res es menos que 0.1 entra a la condicion
 
 											// Al el resultado ser 0 el valor se redondea y se le quita el estado de double
 											String valor_recortado_2 = resultado_string.substring(0, res); // Almacena en la variable valor_recortado_2 el valor desde el principio hasta antes de la coma
@@ -628,18 +628,18 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						    	segunda_parte_string = segunda_parte_string.replace(',','.'); // Convierteme de coma a punto
 						    	int parte_1 = Integer.parseInt(primera_parte_string); // Almacename en la variable parte_1 el valor convertido a entedo de la primera parte
 						    	double parte_2 = Double.parseDouble(segunda_parte_string); // Almacename en la variable parte_2 el valor convertido a double de la segunda parte
-						    	double resultado = parte_1 - parte_2; // Sumame los dos numero y almacenalo en la variable resultado de tipo double
+						    	double resultado = parte_1 - parte_2; // restale los dos numero y almacenalo en la variable resultado de tipo double
 						    	String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado y conviertelo en string
 						    	resultado_string = resultado_string.replace('.',','); // Convierte el punto de el resultado a coma
     	
 						    	for (int res = 0; res < resultado_string.length(); res++) { // Entra al bucle para buscar el punto del resultado
 						    		
-									char buscar_caracter_res = resultado_string.charAt(res); // Almacena en la variable buscar_caracter_plus un array de la variable resultado_string
+									char buscar_caracter_res = resultado_string.charAt(res); // Almacena en la variable buscar_caracter_res un array de la variable resultado_string
 									
-									if(buscar_caracter_res == ',') { // Si buscar_caracter_plus llega a hacer una coma entra a la condicion
+									if(buscar_caracter_res == ',') { // Si buscar_caracter_res llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(res+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
-										int resultado_res = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_plus en valor convertido en un entero de la cadena valor_recortado
+										int resultado_res = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_res en valor convertido en un entero de la cadena valor_recortado
 										
 										if(resultado_res < 0.1) { // Si resultado_plus es menos que 0.1 entra a la condicion
 
@@ -679,10 +679,10 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						String primera_parte_string = cadena.substring(0,i); // Tomame los numeros del 0 hasta antes del /
 						String segunda_parte_string = cadena.substring(i+1,pantalla.getText().length()); // Tomame los numeros despues del / hasta lo ultimo
 						
-						int encontrar_cadenaPunto = pantalla.getText().indexOf(","); // Guarda en la variable encontrarCadenaPunto -1 si no existe la coma en la cadena y diferente a -1 si existe
+						int encontrar_cadena_punto = pantalla.getText().indexOf(","); // Guarda en la variable encontrar_cadena_punto -1 si no existe la coma en la cadena y diferente a -1 si existe
 						
 						
-						if(encontrar_cadenaPunto != -1) { // Si encontrar_cadenaPunto es igual a -1 contiene una coma
+						if(encontrar_cadena_punto != -1) { // Si encontrar_cadenaPunto es igual a -1 contiene una coma
 
 						    if (isNumeric(primera_parte_string) != true && isNumeric(segunda_parte_string) != true) { // Si las dos cadenas contienen un double
 						    	
@@ -690,13 +690,13 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						    	segunda_parte_string = segunda_parte_string.replace(',','.'); // Convierte la coma de la segunda parte en punto
 						    	double parte_1 = Double.parseDouble(primera_parte_string); // Almacena en la variable parte_1 el valor convertido de la cadena string primera parte
 						    	double parte_2 = Double.parseDouble(segunda_parte_string);	// Almacena en la variable parte_2 el valor convertido de la cadena string segunda parte
-						    	double resultado = parte_1 / parte_2; // Almacena en la variable resultado de tipo double la resta de parte_1 y parte_2
+						    	double resultado = parte_1 / parte_2; // Almacena en la variable resultado de tipo double la divicion de parte_1 y parte_2
 						    	String resultado_string = String.valueOf(resultado); // Convierteme el resultado a una cadena string
 						    	resultado_string = resultado_string.replace('.',','); // Convierte el punto de el resultado a coma
 
 						    	for (int div = 0; div < resultado_string.length(); div++) { // Entra al bucle para buscar el punto del resultado
 						    		
-									char buscar_caracter_div = resultado_string.charAt(div); // Almacena en la variable buscar_caracter_res un array de la variable resultado_string
+									char buscar_caracter_div = resultado_string.charAt(div); // Almacena en la variable buscar_caracter_div un array de la variable resultado_string
 									
 									if(buscar_caracter_div == ',') { // Si buscar_caracter_div llega a hacer una coma entra a la condicion
 										
@@ -736,9 +736,9 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 									if(buscar_caracter_div == ',') { // Si buscar_caracter_div llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(div+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
-										int resultado_div = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_plus en valor convertido en un entero de la cadena valor_recortado
+										int resultado_div = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_div en valor convertido en un entero de la cadena valor_recortado
 										
-										if(resultado_div < 0.1) { // Si resultado_plus es menos que 0.1 entra a la condicion
+										if(resultado_div < 0.1) { // Si resultado_div es menos que 0.1 entra a la condicion
 
 											// Al el resultado ser 0 el valor se redondea y se le quita el estado de double
 											String valor_recortado_2 = resultado_string.substring(0, div); // Almacena en la variable valor_recortado_2 el valor desde el principio hasta antes de la coma
@@ -767,12 +767,12 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 						    		
 									char buscar_caracter_div = resultado_string.charAt(div); // Almacena en la variable buscar_caracter_plus un array de la variable resultado_string
 									
-									if(buscar_caracter_div == ',') { // Si buscar_caracter_plus llega a hacer una coma entra a la condicion
+									if(buscar_caracter_div == ',') { // Si buscar_caracter_div llega a hacer una coma entra a la condicion
 										
 										String valor_recortado = resultado_string.substring(div+1, resultado_string.length()); // Guarda en la variable valor_recortado el valor despues de la coma
 										int resultado_div = Integer.parseInt(valor_recortado); // Guarda en la variable resultado_plus en valor convertido en un entero de la cadena valor_recortado
 										
-										if(resultado_div < 0.1) { // Si resultado_plus es menos que 0.1 entra a la condicion
+										if(resultado_div < 0.1) { // Si resultado_div es menos que 0.1 entra a la condicion
 
 											// Al el resultado ser 0 el valor se redondea y se le quita el estado de double
 											String valor_recortado_2 = resultado_string.substring(0, div); // Almacena en la variable valor_recortado_2 el valor desde el principio hasta antes de la coma
@@ -796,12 +796,27 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 							//Esta condicion de cumplira cuando ninguno de los 2 contengan double
 							int parte_1 = Integer.parseInt(primera_parte_string); // Almacena en la variable parte_1 el valor convertido a entero de la variable primera_parte_string
 							int parte_2 = Integer.parseInt(segunda_parte_string); // Almacena en la variable parte_2 el valor convertido a entero de la variable segunda_parte_string
-							int resultado = parte_1 / parte_2; // Almacena en la variable resultado de tipo entera el valor divide de parte_1 / parte_2
-					    	String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado convertido a una cadena
-					    	pantalla.setText(resultado_string); // Imprime por pantalla el resultado
+							
+							if(parte_1 == 1 && parte_2 > 1) { // Si se divide 1 entre un numero mayor que uno ejecuta esta funcion
+								
+								// Se convierte en double ya que si se divide 1 entre un numero mayor que 1 se convertira en double
+								double parte_double_1 = Double.parseDouble(primera_parte_string); // Almacena en la variable parte_1 el valor convertido de la cadena string primera parte
+						    	double parte_double_2 = Double.parseDouble(segunda_parte_string);	// Almacena en la variable parte_2 el valor convertido de la cadena string segunda parte
+						    	double resultado = parte_double_1 / parte_double_2; // Almacena en la variable resultado de tipo double la divide de parte_1 y parte_2
+						    	String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado convertido a una cadena
+						    	resultado_string = resultado_string.replace('.',','); // Convierteme de coma a punto
+						    	pantalla.setText(resultado_string); // Imprime por pantalla el resultado
+						    	
+							}else { // Sino es asi imprime todo normal
+								int resultado = parte_1 / parte_2; // Almacena en la variable resultado de tipo entera el valor divide de parte_1 / parte_2
+								String resultado_string = String.valueOf(resultado); // Almacena en la variable resultado_string el valor de resultado convertido a una cadena
+						    	pantalla.setText(resultado_string); // Imprime por pantalla el resultado
+							}
+							
 						}
 					
 					}	
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 				}
 					
