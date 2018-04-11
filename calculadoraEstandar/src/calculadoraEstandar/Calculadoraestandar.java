@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.text.DecimalFormat;
 
+// JFrame de la calculadora
 public class Calculadoraestandar extends JFrame implements ActionListener{
 
 	// CREANDO EL FORMULARIO
@@ -34,7 +35,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 	
 
 	// CREANDO LA CAJA DEL FORMULARIO
-	public Calculadoraestandar() {	
+	public Calculadoraestandar() {	// Dibujando la calculadora
 	
 		// PROPIEDADES DEL FORMULARIO
 		base.setLayout(null); //Acomodar manualmente los elementos
@@ -156,6 +157,7 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 		
 	}
 
+	// Metodo Main (Ejecutor del programa)
 	public static void main(String[] args) {
 	
 		
@@ -164,21 +166,27 @@ public class Calculadoraestandar extends JFrame implements ActionListener{
 
 	}
 	
-	//AQUI
+	// COMPARA SI UNA CADENA DE TIPO STRING ES DOUBLE O ENTERA
 	public static boolean isNumeric(String cadena) {
 
-        boolean resultado;
+        boolean resultado; // Crea una variable de tipo buleana
 
-        try {
-            Integer.parseInt(cadena);
-            resultado = true;
-        } catch (NumberFormatException excepcion) {
-            resultado = false;
+        try { 
+        	
+        	// Si el programa entra aqui y no da error es entera
+            Integer.parseInt(cadena); // Si la cadena no da error y es entera 
+            resultado = true; // En la variable resultado almacename false
+        } catch (NumberFormatException excepcion) { // Si Integer.parseInt(cadena) da error entra aqui
+        	
+        	//Si el programa entra aqui es double
+            resultado = false; // En la variable resultado almacename false
         }
 
-        return resultado;
+        return resultado; // Retorname los resultados
     }
-
+	
+	
+	// Acciones de los botones
 	public void actionPerformed(ActionEvent e) {
 		
 		// ACCION EN LOS BOTONES
